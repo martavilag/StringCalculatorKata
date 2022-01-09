@@ -13,7 +13,7 @@ namespace StringCalculatorKata2
 
         public int Sum()
         {
-            if (_sequence == "1")
+            if (_sequence != "")
                 return Convert.ToInt32(_sequence);
             return 0;
         }
