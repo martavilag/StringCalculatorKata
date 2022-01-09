@@ -21,5 +21,16 @@ namespace StringCalculatorKata2.Tests
             var oneNumber = new StringCalculator(input);
             oneNumber.Sum().Should().Be(output, input);
         }
+
+        [Theory]
+        [InlineData("1,0", 1)]
+        [InlineData("0,1", 1)]
+        [InlineData("2,0", 2)]
+        [InlineData("0,2", 2)]
+        public void ReturnOneNumberWhenStringIsZeroAndThatSameNumber(string input, int output)
+        {
+            var oneNumber = new StringCalculator(input);
+            oneNumber.Sum().Should().Be(output, input);
+        }
     }
 }
