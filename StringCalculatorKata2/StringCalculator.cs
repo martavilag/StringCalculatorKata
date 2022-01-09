@@ -20,8 +20,11 @@ namespace StringCalculatorKata2
             if (_sequence == "")
                 return 0;
             
-            if (_sequence.Contains("\n,") || _sequence.Contains(",\n") || _sequence.Contains("-"))
+            if (_sequence.Contains("\n,") || _sequence.Contains(",\n"))
                 throw new InvalidOperationException("Sequence not valid");
+            
+            if (_sequence.Contains("-"))
+                throw new InvalidOperationException("Negatives not allowed");
 
             Regex containsSeparatorForwardSlash = new Regex(@"\/\/.\n\d");
             bool isForwardSlashSeparator = containsSeparatorForwardSlash.IsMatch(_sequence);
