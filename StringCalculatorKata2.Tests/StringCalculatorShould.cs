@@ -44,15 +44,16 @@ namespace StringCalculatorKata2.Tests
             oneNumber.Sum().Should().Be(output, input);
         }
 
-       [Fact]
-        public void FailSequence()
+       [Theory]
+        [InlineData("\n,")]
+        [InlineData(",\n")]
+        public void FailWhenContainingOnlyCommaAndNewLine(string input)
         {
-            StringCalculator oneNumber = new("\n,");
+            StringCalculator oneNumber = new(input);
             Func<object> errorSequence = () => oneNumber.Sum();
 
             errorSequence.Should().Throw<InvalidOperationException>()
                 .WithMessage("Sequence not valid");
-
         }
     }
 }
