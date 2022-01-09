@@ -20,7 +20,8 @@ namespace StringCalculatorKata2
             if (!_sequence.Contains(",")) 
                 return Convert.ToInt32(_sequence);
 
-            string[] numberSequence = _sequence.Split(",");
+            char[] separators = new char[] {',', '\n'};
+            string[] numberSequence = _sequence.Split(separators);
 
             return numberSequence.Sum(Convert.ToInt32);
 
