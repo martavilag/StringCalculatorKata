@@ -13,9 +13,17 @@ namespace StringCalculatorKata2
 
         public int Sum()
         {
-            if (_sequence != "")
+            if (_sequence == "")
+                return 0;
+            
+            if (!_sequence.Contains(",")) 
                 return Convert.ToInt32(_sequence);
-            return 0;
+            
+            int firstNumber = Convert.ToInt32(_sequence.Substring(0, 1));
+            int secondNumber = Convert.ToInt32(_sequence.Substring(2));
+            
+            return firstNumber + secondNumber;
+
         }
     }
 }
