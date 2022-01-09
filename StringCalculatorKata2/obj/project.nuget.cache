@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "gk4AkFpB7GYtVQVCCCWPN0dHPvoa5JE7XBht7tfJUFo6180MKwGlssOmaoQKHHmgkqmavgJuuIf8GyJIACaY6A==",
+  "dgSpecHash": "FzbnrH66NiiGosg/KJx346nexNxQKeN5GTnEns/EqkLFxGXode//iHL3sIN9JjRFntc9Nl3QCm/MBcyFJ9aixA==",
   "success": true,
   "projectFilePath": "D:\\Users\\mvila\\source\\repos\\StringCalculatorKata\\StringCalculatorKata2\\StringCalculatorKata2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "D:\\Users\\mvila\\.nuget\\packages\\fluentassertions\\6.3.0\\fluentassertions.6.3.0.nupkg.sha512",
+    "D:\\Users\\mvila\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.0\\system.configuration.configurationmanager.4.4.0.nupkg.sha512",
+    "D:\\Users\\mvila\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.4.0\\system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
+  ],
   "logs": []
 }
