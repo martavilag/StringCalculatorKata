@@ -33,5 +33,14 @@ namespace StringCalculatorKata2.Tests
             var oneNumber = new StringCalculator(input);
             oneNumber.Sum().Should().Be(output, input);
         }
+
+        [Theory]
+        [InlineData("1\n2,3", 6)]
+        [InlineData("0,4\n3,1", 8)]
+        public void ReturnSumSequenceNumbersIgnoringTheCommasAndNewLines(string input, int output)
+        {
+            var oneNumber = new StringCalculator(input);
+            oneNumber.Sum().Should().Be(output, input);
+        }
     }
 }
