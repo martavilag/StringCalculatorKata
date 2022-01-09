@@ -20,7 +20,7 @@ namespace StringCalculatorKata2
             if (!_sequence.Contains(",")) 
                 return Convert.ToInt32(_sequence);
             
-            if (_sequence.Contains("\n,"))
+            if (_sequence.Contains("\n,") || _sequence.Contains(",\n"))
                 throw new InvalidOperationException("Sequence not valid");
 
             char[] separators = new char[] {',', '\n'};
