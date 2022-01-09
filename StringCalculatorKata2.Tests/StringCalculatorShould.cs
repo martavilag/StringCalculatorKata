@@ -24,10 +24,9 @@ namespace StringCalculatorKata2.Tests
 
         [Theory]
         [InlineData("1,0", 1)]
-        [InlineData("0,1", 1)]
-        [InlineData("2,0", 2)]
-        [InlineData("0,2", 2)]
-        public void ReturnOneNumberWhenStringIsZeroAndThatSameNumber(string input, int output)
+        [InlineData("1,1", 2)]
+        [InlineData("2,1", 3)]
+        public void ReturnSumSequenceNumbersIgnoringTheComma(string input, int output)
         {
             var oneNumber = new StringCalculator(input);
             oneNumber.Sum().Should().Be(output, input);
