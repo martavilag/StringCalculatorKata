@@ -12,11 +12,14 @@ namespace StringCalculatorKata2.Tests
             emptyString.Sum().Should().Be(0);
         }
 
-        [Fact]
-        public void ReturnOneWhenStringIsOne()
+        [Theory]
+        [InlineData("1", 1)]
+        [InlineData("2", 2)]
+        [InlineData("3", 3)]
+        public void ReturnOneNumberWhenStringHasOneNumber(string input, int output)
         {
-            var stringOne = new StringCalculator("1");
-            stringOne.Sum().Should().Be(1);
+            var oneNumber = new StringCalculator(input);
+            oneNumber.Sum().Should().Be(output, input);
         }
     }
 }
