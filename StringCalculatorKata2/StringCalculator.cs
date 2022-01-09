@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace StringCalculatorKata2
 {
     public class StringCalculator
     {
-        private readonly string _sequence;
+        private string _sequence;
+        private List<string> _separators = new List<string>() {",", "\n"};
 
         public StringCalculator(string sequence)
         {
@@ -17,14 +20,20 @@ namespace StringCalculatorKata2
             if (_sequence == "")
                 return 0;
             
-            if (!_sequence.Contains(",")) 
-                return Convert.ToInt32(_sequence);
-            
             if (_sequence.Contains("\n,") || _sequence.Contains(",\n"))
                 throw new InvalidOperationException("Sequence not valid");
 
-            char[] separators = new char[] {',', '\n'};
-            string[] numberSequence = _sequence.Split(separators);
+            Regex containsSeparatorForwardSlash = new Regex(@"\/\/.\n\d");
+            bool isForwardSlashSeparator = containsSeparatorForwardSlash.IsMatch(_sequence);
+            
+            if (isForwardSlashSeparator)
+            {
+                _separators.Add(_sequence[2].ToString());
+                _sequence = _sequence[3..];
+
+            }
+
+            string[] numberSequence = _sequence.Split(_separators.ToArray(),StringSplitOptions.RemoveEmptyEntries);
 
             return numberSequence.Sum(Convert.ToInt32);
 

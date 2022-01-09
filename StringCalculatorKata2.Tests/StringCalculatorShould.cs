@@ -58,7 +58,7 @@ namespace StringCalculatorKata2.Tests
 
         [Theory]
         [InlineData("//;\n1;2", 3)]
-        [InlineData("//.2.5.1", 8)]
+        [InlineData("//.\n2.5.1", 8)]
         public void ReturnSumSequenceNumbersIgnoringAllSeparators(string input, int output)
         {
             var sequence = new StringCalculator(input);
