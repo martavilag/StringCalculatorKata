@@ -9,8 +9,8 @@ namespace StringCalculatorKata2.Tests
         [Fact]
         public void ReturnZeroWhenStringIsEmpty()
         {
-            var emptyString = new StringCalculator("");
-            emptyString.Sum().Should().Be(0);
+            var sequence = new StringCalculator("");
+            sequence.Sum().Should().Be(0);
         }
 
         [Theory]
@@ -19,8 +19,8 @@ namespace StringCalculatorKata2.Tests
         [InlineData("3", 3)]
         public void ReturnOneNumberWhenStringHasOneNumber(string input, int output)
         {
-            var oneNumber = new StringCalculator(input);
-            oneNumber.Sum().Should().Be(output, input);
+            var sequence = new StringCalculator(input);
+            sequence.Sum().Should().Be(output, input);
         }
 
         [Theory]
@@ -31,8 +31,8 @@ namespace StringCalculatorKata2.Tests
         [InlineData("20,1,1,100", 122)]
         public void ReturnSumSequenceNumbersIgnoringTheComma(string input, int output)
         {
-            var oneNumber = new StringCalculator(input);
-            oneNumber.Sum().Should().Be(output, input);
+            var sequence = new StringCalculator(input);
+            sequence.Sum().Should().Be(output, input);
         }
 
         [Theory]
@@ -40,8 +40,8 @@ namespace StringCalculatorKata2.Tests
         [InlineData("0,4\n3,1", 8)]
         public void ReturnSumSequenceNumbersIgnoringTheCommasAndNewLines(string input, int output)
         {
-            var oneNumber = new StringCalculator(input);
-            oneNumber.Sum().Should().Be(output, input);
+            var sequence = new StringCalculator(input);
+            sequence.Sum().Should().Be(output, input);
         }
 
        [Theory]
@@ -49,8 +49,8 @@ namespace StringCalculatorKata2.Tests
         [InlineData(",\n")]
         public void FailWhenContainingOnlyCommaAndNewLine(string input)
         {
-            StringCalculator oneNumber = new(input);
-            Func<object> errorSequence = () => oneNumber.Sum();
+            StringCalculator sequence = new(input);
+            Func<object> errorSequence = () => sequence.Sum();
 
             errorSequence.Should().Throw<InvalidOperationException>()
                 .WithMessage("Sequence not valid");
