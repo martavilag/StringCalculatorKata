@@ -8,7 +8,7 @@ namespace StringCalculatorKata2
     public class StringCalculator
     {
         private string _sequence;
-        private List<string> _separators = new List<string>() {",", "\n"};
+        private readonly List<string> _separators = new() {",", "\n"};
 
         public StringCalculator(string sequence)
         {
