@@ -18,11 +18,16 @@ namespace StringCalculatorKata2
             
             if (!_sequence.Contains(",")) 
                 return Convert.ToInt32(_sequence);
+
+            int resultSum = 0;
+            string[] numberSequence = _sequence.Split(",");
+
+            foreach (var number in numberSequence)
+            {
+                resultSum += Convert.ToInt32(number);
+            }
             
-            int firstNumber = Convert.ToInt32(_sequence.Substring(0, 1));
-            int secondNumber = Convert.ToInt32(_sequence.Substring(2));
-            
-            return firstNumber + secondNumber;
+            return resultSum;
 
         }
     }
