@@ -55,5 +55,14 @@ namespace StringCalculatorKata2.Tests
             errorSequence.Should().Throw<InvalidOperationException>()
                 .WithMessage("Sequence not valid");
         }
+
+        [Theory]
+        [InlineData("//;\n1;2", 3)]
+        [InlineData("//.2.5.1", 8)]
+        public void ReturnSumSequenceNumbersIgnoringAllSeparators(string input, int output)
+        {
+            var sequence = new StringCalculator(input);
+            sequence.Sum().Should().Be(output, input);
+        }
     }
 }
