@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 using FluentAssertions;
 
@@ -41,6 +42,17 @@ namespace StringCalculatorKata2.Tests
         {
             var oneNumber = new StringCalculator(input);
             oneNumber.Sum().Should().Be(output, input);
+        }
+
+       [Fact]
+        public void FailSequence()
+        {
+            StringCalculator oneNumber = new("\n,");
+            Func<object> errorSequence = () => oneNumber.Sum();
+
+            errorSequence.Should().Throw<InvalidOperationException>()
+                .WithMessage("Sequence not valid");
+
         }
     }
 }
