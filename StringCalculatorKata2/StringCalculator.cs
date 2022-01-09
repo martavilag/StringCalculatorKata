@@ -4,12 +4,12 @@
     {
         public StringCalculator(string empty)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public int Sum()
         {
-            throw new System.NotImplementedException();
+            return 0;
         }
     }
 }
