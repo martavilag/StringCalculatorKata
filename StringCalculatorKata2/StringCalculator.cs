@@ -19,6 +19,9 @@ namespace StringCalculatorKata2
             
             if (!_sequence.Contains(",")) 
                 return Convert.ToInt32(_sequence);
+            
+            if (_sequence.Contains("\n,"))
+                throw new InvalidOperationException("Sequence not valid");
 
             char[] separators = new char[] {',', '\n'};
             string[] numberSequence = _sequence.Split(separators);
