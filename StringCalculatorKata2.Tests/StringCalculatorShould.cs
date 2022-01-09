@@ -26,6 +26,8 @@ namespace StringCalculatorKata2.Tests
         [InlineData("1,0", 1)]
         [InlineData("1,1", 2)]
         [InlineData("2,1", 3)]
+        [InlineData("2,1,1", 4)]
+        [InlineData("20,1,1,100", 122)]
         public void ReturnSumSequenceNumbersIgnoringTheComma(string input, int output)
         {
             var oneNumber = new StringCalculator(input);
