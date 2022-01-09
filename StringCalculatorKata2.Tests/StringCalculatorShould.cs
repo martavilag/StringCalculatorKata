@@ -50,9 +50,9 @@ namespace StringCalculatorKata2.Tests
         public void FailWhenContainingOnlyCommaAndNewLine(string input)
         {
             StringCalculator sequence = new(input);
-            Action errorSequence = () => sequence.Sum();
+            Action action = () => sequence.Sum();
 
-            errorSequence.Should().Throw<InvalidOperationException>()
+            action.Should().Throw<InvalidOperationException>()
                 .WithMessage("Sequence not valid");
         }
 
