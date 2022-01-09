@@ -64,5 +64,15 @@ namespace StringCalculatorKata2.Tests
             var sequence = new StringCalculator(input);
             sequence.Sum().Should().Be(output, input);
         }
+
+        [Fact]
+        public void FailWhenNegativeNumbersInSequence()
+        {
+            StringCalculator sequence = new("//;\n-1;2");
+            Action action = () => sequence.Sum();
+
+            action.Should().Throw<InvalidOperationException>()
+                .WithMessage("Sequence not valid");
+        }
     }
 }
