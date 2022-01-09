@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace StringCalculatorKata2
 {
@@ -19,15 +20,9 @@ namespace StringCalculatorKata2
             if (!_sequence.Contains(",")) 
                 return Convert.ToInt32(_sequence);
 
-            int resultSum = 0;
             string[] numberSequence = _sequence.Split(",");
 
-            foreach (var number in numberSequence)
-            {
-                resultSum += Convert.ToInt32(number);
-            }
-            
-            return resultSum;
+            return numberSequence.Sum(Convert.ToInt32);
 
         }
     }
