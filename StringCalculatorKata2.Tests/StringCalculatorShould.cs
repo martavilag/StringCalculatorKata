@@ -72,7 +72,7 @@ namespace StringCalculatorKata2.Tests
             Action action = () => sequence.Sum();
 
             action.Should().Throw<InvalidOperationException>()
-                .WithMessage("Sequence not valid");
+                .WithMessage("Negatives not allowed");
         }
     }
 }
